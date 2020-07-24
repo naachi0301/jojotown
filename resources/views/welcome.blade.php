@@ -23,7 +23,7 @@
                         <img src="{{ $product['image_url'] }}" alt="画像例1">
                     </a>
                     <p>
-                        {{ $product['name'] }}
+                        <a href="/product/create">{{ $product['name'] }}</a>
                     </p>
                 </div>
                 @endforeach

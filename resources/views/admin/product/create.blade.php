@@ -29,6 +29,6 @@
             </div>
             <input type="submit" value="送信">
         </form>
-        <p></p>
+        <a href="/product">商品一覧</a>
     </body>
 </html>
