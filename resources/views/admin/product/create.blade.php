@@ -5,7 +5,8 @@
     </head>
     <body>
         <h1>商品追加フォーム</h1>
-        <form action="/form.php" method="post">
+        <form action="/product/store" method="post">
+            @csrf
             <div>
                 <label for="product_name">商品名</label>
                 <input type="text" id="product_name" name="product_name">
@@ -17,6 +18,14 @@
             <div>
                 <label for="price">値段</label>
                 <input type="text"　id="price" name="price">
+            </div>
+            <div>
+                <label for="url">URL</label>
+                <input type="text"　id="url" name="url">
+            </div>
+            <div>
+                <label for="image_url">画像URL</label>
+                <input type="image_url"　id="image_url" name="image_url">
             </div>
             <input type="submit" value="送信">
         </form>

@@ -19,6 +19,7 @@ class CreateProductsTable extends Migration
             $table->bigInteger('brand_id');
             $table->Integer('price');
             $table->text('url')->nullable();
+            $table->text('explain')->nullable();
             $table->timestamps();
         });
     }
