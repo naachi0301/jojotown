@@ -1,12 +1,17 @@
 <?php
 
-Route::get('/product', 'WelcomeController@index');
+Route::get('/', 'WelcomeController@index');
     
+Route::get('admin/product', 'AdminProductController@index');
 
-Route::get('product/create', 'AdminProductController@create');
+Route::get('admin/product/destroy/{id}', 'AdminProductController@destroy');
 
-Route::post('product/store', 'AdminProductController@store');
+Route::get('admin/product/create', 'AdminProductController@create');
+
+Route::post('admin/product/store', 'AdminProductController@store');
+
+Route::get('admin/product/edit/{id}', 'AdminProductController@edit');
+
+Route::post('admin/product/update/{id}', 'AdminProductController@update');
 
 Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
