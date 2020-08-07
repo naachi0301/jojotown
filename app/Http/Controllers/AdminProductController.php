@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Product;
+use App\Brand;
 
 class AdminProductController extends Controller
 {
@@ -22,13 +23,16 @@ class AdminProductController extends Controller
 
     public function create()
     {
+        $brands = Brand::all();
         return view('admin/product/detail', [
             'product_name' => '',
             'product_explain' => '',
             'price' => '',
             'url' => '',
             'image_url' => '',
-            'action' => '/admin/product/store'
+            'brand_id' => count($brands) > 0 ? $brands[0] : 0,
+            'action' => '/admin/product/store',
+            'brands' => $brands,
         ]);
     }
 
@@ -36,7 +40,7 @@ class AdminProductController extends Controller
     {
         $product = new Product;
         $product->name = $request->product_name;
-        $product->brand_id = 1;
+        $product->brand_id = $request->brand_id;
         $product->price = $request->price;
 
         $product->explain = $request->product_explain;
@@ -52,13 +56,16 @@ class AdminProductController extends Controller
     public function edit(int $id, Request $request)
     {
         $product = Product::find($id);
+        $brands = Brand::all();
         return view('admin/product/detail', [
             'product_name' => $product['name'],
             'product_explain' => $product['explain'],
             'price' => $product['price'],
             'url' => $product['url'],
+            'brand_id' => $product['brand_id'],
             'image_url' => $product['image_url'],
-            'action' => '/admin/product/update/' . $id
+            'action' => '/admin/product/update/' . $id,
+            'brands' => $brands,
         ]);
     }
 
@@ -66,7 +73,7 @@ class AdminProductController extends Controller
     {
         $product = Product::find($id);
         $product->name = $request->product_name;
-        $product->brand_id = 1;
+        $product->brand_id = $request->brand_id;
         $product->price = $request->price;
 
         $product->explain = $request->product_explain;
