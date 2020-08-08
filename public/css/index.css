@@ -42,13 +42,13 @@ body {
   transform: translate(-50%, -50%);
   color: #5bc8ac;
 }
-/*.man_list {*/
-/*    display: inline-block;*/
-/*    top: 50px;*/
-/*    left: 50px;*/
-/*    text-align: center;*/
-/*    padding-left: 50px;*/
-/*}*/
+.man_list {
+    display: inline-block;
+    top: 50px;
+    left: 50px;
+    text-align: center;
+    padding-left: 50px;
+}
 p {
     width: 230px;
 }
