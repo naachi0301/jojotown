@@ -2,7 +2,7 @@
 
 Route::get('/', 'WelcomeController@index');
     
-Route::get('admin/product', 'AdminProductController@index');
+Route::get('admin/product', 'AdminProductController@index')->name('product');
 
 Route::get('admin/product/destroy/{id}', 'AdminProductController@destroy');
 
@@ -15,7 +15,7 @@ Route::get('admin/product/edit/{id}', 'AdminProductController@edit');
 Route::post('admin/product/update/{id}', 'AdminProductController@update');
 
 
-Route::get('admin/trend', 'AdminTrendController@index');
+Route::get('admin/trend', 'AdminTrendController@index')->name('trend');
 
 Route::get('admin/trend/destroy/{id}', 'AdminTrendController@destroy');
 
@@ -28,7 +28,7 @@ Route::get('admin/trend/edit/{id}', 'AdminTrendController@edit');
 Route::post('admin/trend/update/{id}', 'AdminTrendController@update');
 
 
-Route::get('admin/brand', 'AdminBrandController@index');
+Route::get('admin/brand', 'AdminBrandController@index')->name('brand');
 
 Route::get('admin/brand/destroy/{id}', 'AdminBrandController@destroy');
 

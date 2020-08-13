@@ -33,7 +33,15 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
-
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('product') }}">商品管理</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('trend') }}">トレンド管理</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('brand') }}">ブランド管理</a>
+                        </li>
                     </ul>
 
                     <!-- Right Side Of Navbar -->

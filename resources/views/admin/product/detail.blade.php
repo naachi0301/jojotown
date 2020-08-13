@@ -43,7 +43,30 @@
                             <input id="image_url" class="form-control" name="image_url" value="{{ old('image_url', $image_url) }}">
                         </div>
                     </div>
-
+                    
+                    <div class="form-group row">
+                        <label for="product_name" class="col-md-4 col-form-label text-md-right">ブランド</label>
+                        <div class="col-md-6">
+                            <select name="brand_id" name="brand_id" class="form-control">
+                                @foreach ($brands as $brand)
+                                    <option value="{{ $brand['id'] }}" @if(old('brand_id', $brand_id) == $brand['id']) selected  @endif>{{ $brand['name'] }}</option>
+                                @endforeach
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group row">
+                        <label for="product_name" class="col-md-4 col-form-label text-md-right">トレンド</label></label></label>
+                        <div class="col-md-6">
+                            <select name="trend_id" name="trend_id" class="form-control">
+                                @foreach ($trends as $trend)
+                                    <option value="{{ $trend['id'] }}" @if(old('trend_id', $trend_id) == $trend['id']) selected  @endif>{{ $trend['name'] }}</option>
+                                @endforeach
+                            </select>
+                        </div>
+                    </div>
+                    
+                    
                     <div class="form-group row mb-3">
                         <div class="col-md-8 offset-md-4">
                             <button type="submit" class="btn btn-primary">
