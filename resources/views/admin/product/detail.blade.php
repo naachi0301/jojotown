@@ -56,16 +56,15 @@
                     </div>
                     
                     <div class="form-group row">
-                        <label for="product_name" class="col-md-4 col-form-label text-md-right">トレンド</label></label></label>
+                        <label for="product_name" class="col-md-4 col-form-label text-md-right">トレンド</label>
                         <div class="col-md-6">
-                            <select name="trend_id" name="trend_id" class="form-control">
+                            <select multiple name="trend_ids[]" name="trend_ids[]" class="form-control">
                                 @foreach ($trends as $trend)
-                                    <option value="{{ $trend['id'] }}" @if(old('trend_id', $trend_id) == $trend['id']) selected  @endif>{{ $trend['name'] }}</option>
+                                    <option value="{{ $trend['id'] }}" @if(in_array($trend['id'], old('trend_ids', $trend_ids))) selected  @endif>{{ $trend['name'] }}</option>
                                 @endforeach
                             </select>
                         </div>
                     </div>
-                    
                     
                     <div class="form-group row mb-3">
                         <div class="col-md-8 offset-md-4">
