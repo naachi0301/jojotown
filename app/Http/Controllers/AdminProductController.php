@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Http\Requests\HelloRequest;
 use App\Product;
 use App\Brand;
 use App\Trend;
@@ -59,7 +60,6 @@ class AdminProductController extends Controller
             'image_url' => '',
             'brand_id' => count($brands) > 0 ? $brands[0]['id'] : 0,
             'trend_ids' => [],
-
             
             'action' => '/admin/product/store',
             'brands' => $brands,
@@ -68,7 +68,7 @@ class AdminProductController extends Controller
         
     }
 
-    public function store(Request $request)
+    public function store(HelloRequest $request)
     {
         $product = new Product;
         $product->name = $request->product_name;
@@ -80,6 +80,7 @@ class AdminProductController extends Controller
         $product->image_url = $request->input('image_url');
         
         
+        
         $product->save();
         
         foreach ($request->trend_ids as $trend_id) {
@@ -89,16 +90,6 @@ class AdminProductController extends Controller
             
             $trend_product->save();
         }
-            
-        $validate_rule = [
-            'product_name' => '',
-            'product_explain' => '',
-            'price' => 'numeric|gt:0',
-            'url' => 'url|active_url',
-            'image_url' => 'url|active_url',
-            ];
-            $this->validate($request, $validate_rule);
-    
 
         return redirect('/admin/product');
     }
@@ -124,7 +115,7 @@ class AdminProductController extends Controller
         ]);
     }
 
-    public function update(int $id, Request $request)
+    public function update(int $id, HelloRequest $request)
     {
         $product = Product::find($id);
         $product->name = $request->product_name;
@@ -147,16 +138,6 @@ class AdminProductController extends Controller
     
             $trend_product->save();
         }
-        $validate_rule = [
-            'product_name' => '',
-            'product_explain' => '',
-            'price' => 'numeric|gt:0',
-            'url' => 'url|active_url',
-            'image_url' => 'url|active_url',
-            ];
-            $this->validate($request, $validate_rule);
-            
-            
 
         return redirect('/admin/product');
     }
@@ -168,4 +149,5 @@ class AdminProductController extends Controller
         
         return redirect('/admin/product');
     }
+    
 }

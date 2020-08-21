@@ -158,18 +158,18 @@ p {
 .headline:after {
     margin-left: 4em;
 }
-#man {
+#trend_1 {
     padding-top: 110px;
 }
-#woman {
-    padding-top: 110px;
-    margin-top: -110px;
-}
-#item {
+#trend_2 {
     padding-top: 110px;
     margin-top: -110px;
 }
-#color {
+#trend_3 {
+    padding-top: 110px;
+    margin-top: -110px;
+}
+#trend_4 {
     padding-top: 110px;
     margin-top: -110px;
 }

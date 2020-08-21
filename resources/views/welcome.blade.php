@@ -3,15 +3,17 @@
 @section('content')
 
 <!-------------------------------main----------------------------->
+        @foreach ($trends as $trend)
         <div class="table">
             <ul class="m-0 p-0 ">
-                <li><a href="#man">man</a></li>
-                <li><a href="#woman">woman</a></li>
-                <li><a href="#item">item</a></li>
-                <li><a href="#color">color</a></li>
+                <li><a href="#trend_1">エスニック柄</a></li>
+                <li><a href="#trend_2">ストール</a></li>
+                <li><a href="#trend_3">夏</a></li>
+                <li><a href="#trend_4">オーバーサイズ</a></li>
             </ul>
         </div>
-        <div id="man">
+        @endforeach
+        <div id="trend_1">
             <div class="headline">
                 <h2>man</h2>
             </div>
@@ -31,7 +33,7 @@
             </div>
         </div>
         </div>
-        <div id="woman">
+        <div id="trend_2">
             <div class="headline">
                 <h2>man</h2>
             </div>
@@ -48,7 +50,7 @@
             </div>
         </div>
         </div>
-        <div id="item">
+        <div id="trend_3">
             <div class="headline">
                 <h2>man</h2>
             </div>
@@ -65,7 +67,7 @@
             </div>
         </div>
         </div>
-        <div id="color">
+        <div id="trend_4">
             <div class="headline">
                 <h2>man</h2>
             </div>
