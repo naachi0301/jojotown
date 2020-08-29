@@ -17,6 +17,8 @@ class CreateTrendsTable extends Migration
             $table->bigIncrements('id');
             $table->string('name', 100);
             $table->text('discription')->nullable();
+            $table->timestamp('start_at')->nullable();
+            $table->timestamp('end_at')->nullable();
             $table->timestamps();
         });
     }

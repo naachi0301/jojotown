@@ -22,6 +22,21 @@
                             <textarea id="trend_discription" class="form-control" name="trend_discription">{{ old('trend_discription', $trend_discription) }}</textarea>
                         </div>
                     </div>
+                    
+                    <div class="form-group row">
+                        <label for="trend_start" class="col-md-4 col-form-label text-md-right">トレンド商品名</label>
+                        <div class="col-md-6">
+                            <input id="trend_start" class="form-control" name="trend_start" type="date" value="{{ old('trend_start', $trend_start) }}" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group row">
+                        <label for="trend_end" class="col-md-4 col-form-label text-md-right">トレンド商品名</label>
+                        <div class="col-md-6">
+                            <input id="trend_end" class="form-control" name="trend_end" type="date" value="{{ old('trend_end', $trend_end) }}" required>
+                        </div>
+                    </div>
+                    
                     <div class="form-group row mb-3">
                         <div class="col-md-8 offset-md-4">
                             <button type="submit" class="btn btn-primary">

@@ -19,7 +19,9 @@ class HelloRequest extends FormRequest
             'product_explain' => 'required',
             'price' => 'numeric|gt:0',
             'url' => 'url|active_url',
-            'image_url' => 'url|active_url'
+            'image_url' => 'url|active_url',
+            'trend_start' => 'required',
+            'trend_end' => 'required',
         ];
     }
     
@@ -34,6 +36,8 @@ class HelloRequest extends FormRequest
             'url.active_url' => '有効なURLではありません。',
             'image_url.url' => '正しいURLの形式で入力してください',
             'image_url.active_url' => '有効なURLではありません',
+            'trend_start.required' => '開始日は必ず入力してください',
+            'trend_end.required' => '終了日は必ず入力してください'
         ];
     }
 }

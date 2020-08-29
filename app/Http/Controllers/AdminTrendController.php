@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+
 use App\Trend;
 
 class AdminTrendController extends Controller
@@ -25,6 +26,8 @@ class AdminTrendController extends Controller
         return view('admin/trend/detail', [
             'trend_name' => '',
             'trend_discription' => '',
+            'trend_start' => '',
+            'trend_end' => '',
             'action' => '/admin/trend/store'
 
         ]);
@@ -35,6 +38,8 @@ class AdminTrendController extends Controller
         $trend = new Trend;
         $trend->name = $request->trend_name;
         $trend->discription = $request->trend_discription;
+        $trend->start_at = $request->trend_start;
+        $trend->end_at = $request->trend_end;
         
         $trend->save();
         
@@ -47,6 +52,8 @@ class AdminTrendController extends Controller
         return view('admin/trend/detail', [
             'trend_name' => $trend['name'],
             'trend_discription' => $trend['discription'],
+            'trend_start' => substr($trend['start_at'], 0, 10),
+            'trend_end'=>$trend['end_at'],
             'action' => '/admin/trend/update/' . $id
         ]);
     }
@@ -56,6 +63,8 @@ class AdminTrendController extends Controller
         $trend = Trend::find($id);
         $trend->name = $request->trend_name;
         $trend->discription = $request->trend_discription;
+        $trend->start_at = $request->trend_start;
+        $trend->end_at = $request->trend_end;
         
         $trend->update();
 
