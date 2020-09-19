@@ -14,9 +14,11 @@
                         <label for="product_name" class="col-md-4 col-form-label text-md-right">商品名</label>
                         <div class="col-md-6">
                             <input id="product_name" class="form-control" name="product_name" value="{{ old('product_name', $product_name) }}" required>
-                            @error('product_name')
-                            <small class="text-danger">{{$message}}</small>
-                            @enderror
+                            @if ($errors->has('product_name'))
+                                <div class="alert alert-danger">
+                                    {{$errors->first('product_name')}}
+                                </div>
+                            @endif
                         </div>
                     </div>
                     
@@ -24,9 +26,11 @@
                         <label for="product_explain" class="col-md-4 col-form-label text-md-right">商品説明</label>
                         <div class="col-md-6">
                             <textarea id="product_explain" class="form-control" name="product_explain">{{ old('product_explain', $product_explain) }}</textarea>
-                            @error('product_explain')
-                            <small class="text-danger">{{$message}}</small>
-                            @enderror
+                            @if ($errors->has('product_explain'))
+                                <div class="alert alert-danger">
+                                    {{$errors->first('product_explain')}}
+                                </div>
+                            @endif
                         </div>
                     </div>
 
@@ -34,9 +38,11 @@
                         <label for="price" class="col-md-4 col-form-label text-md-right">値段（円）</label>
                         <div class="col-md-6">
                             <input type="number" id="price" class="form-control" name="price" value="{{ old('price', $price) }}">
-                            @error('price')
-                            <small class="text-danger">{{$message}}</small>
-                            @enderror
+                            @if ($errors->has('price'))
+                                <div class="alert alert-danger">
+                                    {{$errors->first('price')}}
+                                </div>
+                            @endif
                         </div>
                     </div>
 
@@ -44,9 +50,11 @@
                         <label for="url" class="col-md-4 col-form-label text-md-right">URL</label>
                         <div class="col-md-6">
                             <input id="url" class="form-control" name="url" value="{{ old('url', $url) }}">
-                            @error('url')
-                            <small class="text-danger">{{$message}}</small>
-                            @enderror
+                            @if ($errors->has('url'))
+                                <div class="alert alert-danger">
+                                    {{$errors->first('url')}}
+                                </div>
+                            @endif
                         </div>
                     </div>
 
@@ -54,9 +62,11 @@
                         <label for="image_url" class="col-md-4 col-form-label text-md-right">画像URL</label>
                         <div class="col-md-6">
                             <input id="image_url" class="form-control" name="image_url" value="{{ old('image_url', $image_url) }}">
-                            @error('image_url')
-                            <small class="text-danger">{{$message}}</small>
-                            @enderror   
+                            @if ($errors->has('image_url'))
+                                <div class="alert alert-danger">
+                                    {{$errors->first('image_url')}}
+                                </div>
+                            @endif
                         </div>
                     </div>
                     
