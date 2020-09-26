@@ -13,7 +13,7 @@
                     <div class="form-group row">
                         <label for="product_name" class="col-md-4 col-form-label text-md-right">商品名</label>
                         <div class="col-md-6">
-                            <input id="product_name" class="form-control" name="product_name" value="{{ old('product_name', $product_name) }}" required>
+                            <input id="product_name" class="form-control" name="product_name" value="{{ old('product_name', $product_name) }}">
                             @if ($errors->has('product_name'))
                                 <div class="alert alert-danger">
                                     {{$errors->first('product_name')}}

@@ -68,7 +68,7 @@ class AdminProductController extends Controller
         
     }
 
-    public function store(HelloRequest $request)
+    public function store(Request $request)
     {
         $product = new Product;
         $product->name = $request->product_name;
@@ -115,7 +115,7 @@ class AdminProductController extends Controller
         ]);
     }
 
-    public function update(int $id, HelloRequest $request)
+    public function update(int $id, Request $request)
     {
         $product = Product::find($id);
         $product->name = $request->product_name;
