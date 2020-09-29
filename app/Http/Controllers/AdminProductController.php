@@ -68,7 +68,7 @@ class AdminProductController extends Controller
         
     }
 
-    public function store(Request $request)
+    public function store(HelloRequest $request)
     {
         $product = new Product;
         $product->name = $request->product_name;
@@ -115,7 +115,7 @@ class AdminProductController extends Controller
         ]);
     }
 
-    public function update(int $id, Request $request)
+    public function update(int $id, HelloRequest $request)
     {
         $product = Product::find($id);
         $product->name = $request->product_name;
@@ -138,6 +138,7 @@ class AdminProductController extends Controller
     
             $trend_product->save();
         }
+            $validated = $request->validated();
 
         return redirect('/admin/product');
     }
